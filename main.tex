@@ -38,8 +38,8 @@
 % % --- GÓI CĂN LỀ (ĐÃ GỘP LẠI) ---
 % \usepackage[margin=2.5cm]{geometry} 
 
-% --- GÓI HỖ TRỢ ---
-\usepackage{graphicx} 
+% --- GÓI HỖ TRỢ ---  
+\usepackage{graphicx}  
 \usepackage{setspace}
 \usepackage{xcolor}
 \usepackage{tikz} 
@@ -47,18 +47,15 @@
 \usepackage{indentfirst} % Thụt đầu dòng đoạn đầu tiên
 \usetikzlibrary{calc}
 \usepackage{amsmath} % Gói toán học
-\usepackage{hyperref} % Tạo link
 \usepackage{booktabs} % Bảng đẹp
 \usepackage{listings} % Chèn code
 % \usepackage{parskip} % Xuống dòng giữa các đoạn
 \usepackage{amssymb}
 \usepackage{wrapfig}
-\usepackage{float}
 \usepackage{longtable} % Bắt buộc cho bảng dài
 \usepackage{array}     % Để định dạng cột
 \usepackage{xurl}
-\usepackage[hidelinks]{hyperref}
-\usepackage{url}
+\usepackage[hidelinks]{hyperref} % Tạo link
 
 % --- SỬA LỖI ẢNH KHÔNG TỒN TẠI TẠI MÔI TRƯỜNG BIÊN DỊCH ---
 % Ghi đè lệnh includegraphics để hiển thị khung thay vì báo lỗi thiếu file
@@ -78,9 +75,9 @@
     frame=single,                   % Khung
     numbers=left,                   % Đánh số dòng
     numberstyle=\tiny\color{gray}   % Kiểu số dòng
-}
+} 
 
-% --- CÀI ĐẶT ---
+% --- CÀI ĐẶT ---  
 \setstretch{1.3} % Giãn dòng 1.3
 \changefontsizes{14pt} % Đổi cỡ chữ toàn văn bản
 
@@ -125,7 +122,7 @@
     \fontsize{15pt}{15pt}\selectfont 
     \textbf{\textrm{XÂY DỰNG HỆ THỐNG SCAN TÀI LIỆU TỰ ĐỘNG VÀ HIỆU CHỈNH PHỐI CẢNH}}
 \end{center}
- 
+      
 \begin{center}
 \textbf{GV Bộ Môn: Cao Văn Chung}
 \end{center}
@@ -1529,7 +1526,7 @@ Với ảnh  RGB được cân bằng sáng trên HSV
     \end{subfigure}
 
     \caption{So sánh kết quả Region Growing trên ảnh RGB sau khi cân bằng sáng trên không gian màu HSV với ngưỡng $T = 60$.}
-    \label{fig:region-growing-lab-t60}
+    \label{fig:region-growing-hsv-t60}
 \end{figure}
 
 
@@ -1715,13 +1712,13 @@ Trong phát hiện biên, ảnh xám và kênh sáng của hệ LAB cho kết qu
 Nhìn chung, các phương pháp xử lý ảnh truyền thống có ưu điểm là dễ triển khai, dễ quan sát và không cần dữ liệu huấn luyện. Tuy nhiên, hệ thống vẫn phụ thuộc nhiều vào tham số như ngưỡng, kernel, seed và điều kiện chụp ảnh. Đây là hạn chế lớn khi triển khai trên dữ liệu thực tế đa dạng. Vì vậy, hướng cải thiện trong tương lai là kết hợp thêm các phương pháp học sâu để tăng khả năng tổng quát hóa trong các trường hợp nền phức tạp, bóng đổ mạnh hoặc tài liệu bị che khuất.
 
 
-\chapter{Kết luận và hướng phát triển}
+\chapter{Kết luận và hướng phát triển} 
 \section{Kết luận}
 
 Dự án đã xây dựng thành công một hệ thống tự động nhận diện và scan tài liệu vận hành hoàn toàn dựa trên sự tinh tế của các thuật toán Xử lý ảnh số truyền thống. Bằng cách thao túng sự tách biệt ánh sáng trong hệ tọa độ màu HSV và LAB, hệ thống giải quyết trọn vẹn rắc rối do ánh sáng môi trường. Sự phối hợp của các bộ lọc CLAHE, màng lọc hình thái học Opening/Closing, định vị biên đa kênh và các biến đổi uốn góc Homography đã đáp ứng chính xác nhu cầu số hóa tài liệu.
 
 Bên cạnh đó, dự án đã mạnh dạn ứng dụng và phân tích mổ xẻ những thiết kế phức tạp trong phân đoạn ảnh bậc cao. Trong khi Marker-Controlled Watershed khống chế hoàn toàn bài toán Over-segmentation đem lại biên viền tách biệt, Region Growing mở ra khả năng thích ứng linh hoạt với đổ bóng nhưng đồng thời bộc lộ yếu điểm về mặt quản lý tài nguyên tính toán không gian.
-
+ 
 \section{Hướng phát triển}
 
 Mặc dù các phương pháp kỹ thuật tính toán truyền thống đóng vai trò xương sống cho việc phân tích, sự phụ thuộc vào các ngưỡng (thresholds) cấu hình tĩnh vẫn làm giảm khả năng khái quát (generalization) của hệ thống trong những điều kiện che khuất nghiêm trọng. 
